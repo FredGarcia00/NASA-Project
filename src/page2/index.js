@@ -1,0 +1,58 @@
+import Search from './search-rover';
+import * as searchView from './searchView';
+import {elements} from './base';
+import css from './style.css';
+import axios from 'axios';
+
+
+//Global state of the app
+//search object
+const state ={};
+
+const controlSearch = async () => {
+    // 1) Get the id from the view
+    const id = searchView.getInput();
+    console.log(id);
+    if(id) {
+        //2) New search object and add to state
+        state.search = new Search(id);
+
+        //3) prepare UI for results
+        searchView.clearInput();
+        searchView.clearResults();
+        //4) waits for data from api
+        await state.search.getPhotos();
+
+        //5) render results on UI
+        console.log(state.search.result);
+        searchView.renderResults(state.search.result);    }
+}
+elements.searchForm.addEventListener('submit', e => {
+    e.preventDefault();//so it doesn't refresh each click
+    controlSearch();
+})
+
+// below is rover data
+
+const info = document.querySelector('.grid-info');
+axios({
+        method:'get',
+        url:'https://api.nasa.gov/mars-photos/api/v1/rovers/spirit/photos?sol=12&camera=NAVCAM&api_key=6YmFdsVxaR5ewRLqHtIEIFBPM1jsqFUxjGAJPBPV'
+    })
+    .then(res => {
+        for(let a in res.data){
+            info.innerHTML = `
+            <p>Rover: ${res.data.photos[0].rover.name}</p>
+            <p>Landed on Mars: ${res.data.photos[0].rover.landing_date}</p>
+            <p>Launched from Earth on: ${res.data.photos[0].rover.launch_date}</p>
+            <p>Status: <span class="status-green">${res.data.photos[0].rover.status}</span></p>
+            <p>Max sol: ${res.data.photos[0].rover.max_sol}</p>
+            <p>Last received photos on: ${res.data.photos[0].rover.max_date}</p>
+            <p>Total photos: ${res.data.photos[0].rover.total_photos}</p>
+            `;
+        }
+        console.log(res);
+    })
+    .catch(error => console.error(error));
+
+
