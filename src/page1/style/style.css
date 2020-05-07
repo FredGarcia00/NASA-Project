@@ -72,7 +72,7 @@ header{
 
 .box1 {
     position: relative;
-    background: url('/src/page1/img/silhouette-of-person-holding-glass-mason-jar-1274260.jpg');
+    background: url("/src/page1/img/silhouette-of-person-holding-glass-mason-jar-1274260.jpg");
     background-size: cover;
     background-position: center;
     grid-row: 1/5;
