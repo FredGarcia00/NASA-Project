@@ -162,3 +162,30 @@ footer{
     padding: 33px;
     font-weight: 200;
 }
+
+@media(max-width: 625px) {
+    .box1 a {
+        bottom: 4.4rem;
+    }
+    .box4 a {
+        bottom: 4.4rem;
+    } 
+}
+@media (max-width: 524px) {
+    .box1 a {
+        bottom: 4.4rem;
+    }
+    .box4 a {
+        bottom: 5.4rem;
+    }
+}
+@media (max-width: 354px) {
+    .box1 a {
+        bottom: 4.8rem;
+    }
+    .box4 a {
+        bottom: 7.2rem;
+    }
+}
+
+
