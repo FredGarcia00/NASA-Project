@@ -12,6 +12,9 @@
 svg[data-icon="fa-solid:user-astronaut"] {
     font-size: 60px;
   }
+svg[data-icon="ion:arrow-back-circle-outline"] {
+    font-size: 60px;
+  }
 
 body{
     background:linear-gradient(black,grey,black)repeat;
@@ -33,23 +36,21 @@ header{
     /* background: url(/img/sky-space-dark-galaxy-2162.jpg); */
     background: linear-gradient(black,blue);
     background-size: cover;
-    background-position: center;
+    /* background-position: center; */
     /* opacity: .6; */
     color: #fff;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
 }
 
+
 header a{
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     text-decoration: none;
     color: #fff; 
-    
-
-
 }
 
 /* End of logo and title */

@@ -29,18 +29,13 @@ header{
     /* background: url(/img/sky-space-dark-galaxy-2162.jpg); */
     background: linear-gradient(black,blue);
     background-size: cover;
-    background-position: center;
+    /* background-position: center; */
     /* opacity: .6; */
     color: #fff;
     display: flex;
     justify-content: start;
     align-items: center;
  
-}
-
-.fa-rocket{
-    /* background: linear-gradient(blue,red); */
-    color: #fff;
 }
 
 /* End of logo and title */
@@ -51,8 +46,6 @@ header{
     display:grid;
     margin-bottom: 10px;
     top:0;
-    /* position: sticky;
-    z-index: 1; */
 }
 
 .headline-info{
@@ -83,15 +76,13 @@ header{
     grid-row: 1/5;
 }
 
-
-
 .box1-img{
     position: absolute;
     width: auto;
     height: auto;
 
 }
-.box1 a{
+.box1 a {
     position: absolute;
     opacity: .6;
     background-color: red;

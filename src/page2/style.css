@@ -5,7 +5,16 @@
 
 /* below is icon */
 svg[data-icon="mdi:space-station"] {
-    font-size: 70px;
+    font-size: 60px;
+    /* padding-left: 70rem; */
+    color: #fff;
+  }
+  svg[data-icon="ion:arrow-back-circle-outline"] {
+    font-size: 60px;
+  }
+
+  header a{
+    text-decoration: none;
     color: #fff;
   }
 
