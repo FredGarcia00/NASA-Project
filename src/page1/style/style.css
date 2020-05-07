@@ -72,7 +72,7 @@ header{
 
 .box1 {
     position: relative;
-    background: url("https:/src/page1/img/jar.jpg");
+    background: url("/src/page1/img/jar.jpg");
     background-size: cover;
     background-position: center;
     grid-row: 1/5;
@@ -121,7 +121,7 @@ header{
 
 .box4{
     position: relative;
-    background: url("https:/src/page1/img/robot.jpg");
+    background: url("/src/page1/img/robot.jpg");
     background-position: center;
     background-size: cover;
     grid-row:1/5;
