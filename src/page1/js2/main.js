@@ -1,5 +1,4 @@
 import axios from 'axios';
-import img from '../img/silhouette-of-person-holding-glass-mason-jar-1274260.jpg';
 import css from '../style/pod.css';
 
 
