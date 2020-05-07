@@ -1,2 +1,3 @@
 import css from '../style/style.css'
-import img from '../img/robot.jpg';
+import galaxy from '../img/jar.jpg';
+import robot from '../img/robot.jpg';
