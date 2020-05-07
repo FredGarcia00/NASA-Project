@@ -1,9 +1,11 @@
 import axios from 'axios';
+import img from '../img/space-research-science-astronaut-41162.jpg';
 import css from '../style/pod.css';
 
 
-        axios.get('https://api.nasa.gov/planetary/apod?api_key=6YmFdsVxaR5ewRLqHtIEIFBPM1jsqFUxjGAJPBPV&hd=false')
-        .then(res => console.log(res));
+
+        // axios.get('https://api.nasa.gov/planetary/apod?api_key=6YmFdsVxaR5ewRLqHtIEIFBPM1jsqFUxjGAJPBPV&hd=false')
+        // .then(res => console.log(res));
 
 //Get request
 const getPicture = () => {
