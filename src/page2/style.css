@@ -3,6 +3,12 @@
     padding: 0;
 }
 
+/* below is icon */
+svg[data-icon="mdi:space-station"] {
+    font-size: 70px;
+    color: #fff;
+  }
+
 body{
     background: linear-gradient(black,grey,black);
     /* background: repeat-y; */

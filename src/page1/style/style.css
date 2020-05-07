@@ -5,6 +5,11 @@
     margin: 0;
 }
 
+/* below is icon style */
+svg[data-icon="fa-space-shuttle"] {
+    font-size: 60px;
+  }
+
 body{
     /* display: block; 
     margin: 30px 50px; */

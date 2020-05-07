@@ -8,6 +8,11 @@
 } */
 
 
+/* below is the icon  */
+svg[data-icon="fa-solid:user-astronaut"] {
+    font-size: 60px;
+  }
+
 body{
     background:linear-gradient(black,grey,black)repeat;
     background-size: cover;
