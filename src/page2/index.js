@@ -1,8 +1,9 @@
 import Search from './search-rover';
 import * as searchView from './searchView';
-import {elements} from './base';
-import css from './style.css';
+import { elements } from './base';
+import './style.css';
 import axios from 'axios';
+import * as spinner from  './spinner';
 
 
 //Global state of the app
@@ -20,12 +21,18 @@ const controlSearch = async () => {
         //3) prepare UI for results
         searchView.clearInput();
         searchView.clearResults();
-        //4) waits for data from api
-        await state.search.getPhotos();
-
-        //5) render results on UI
-        console.log(state.search.result);
-        searchView.renderResults(state.search.result);    }
+        spinner.spinner();
+        try {
+            //4) waits for data from api
+            await state.search.getPhotos();
+            spinner.clearSpinner();
+            //5) render results on UI
+            // console.log(state.search.result); get pics from search-rover this.result
+            searchView.renderResults(state.search.result);  }
+            catch(err) {
+                console.log('something went wrong');
+            }
+        }
 }
 elements.searchForm.addEventListener('submit', e => {
     e.preventDefault();//so it doesn't refresh each click
@@ -43,15 +50,15 @@ axios({
         for(let a in res.data){
             info.innerHTML = `
             <p>Rover: ${res.data.photos[0].rover.name}</p>
-            <p>Landed on Mars: ${res.data.photos[0].rover.landing_date}</p>
             <p>Launched from Earth on: ${res.data.photos[0].rover.launch_date}</p>
+            <p>Landed on Mars: ${res.data.photos[0].rover.landing_date}</p>
             <p>Status: <span class="status-green">${res.data.photos[0].rover.status}</span></p>
             <p>Max sol: ${res.data.photos[0].rover.max_sol}</p>
             <p>Last received photos on: ${res.data.photos[0].rover.max_date}</p>
             <p>Total photos: ${res.data.photos[0].rover.total_photos}</p>
             `;
         }
-        console.log(res);
+        // console.log(res);
     })
     .catch(error => console.error(error));
 
