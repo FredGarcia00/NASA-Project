@@ -2,7 +2,7 @@ import { elements } from './base';
 
 export const spinner = () => {
     const loader = `
-        <div class="loader">
+        <div class="loader" id="load">
         <h1>loading...</h1>
         </div>
         `;

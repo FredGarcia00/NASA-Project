@@ -10,7 +10,7 @@ import * as spinner from '../../page2/spinner';
 
 
 const getPicture = () => {
-    spinner.spinner();
+   spinner.spinner();
     axios({
         method:'get',
         url:'https://api.nasa.gov/planetary/apod?api_key=6YmFdsVxaR5ewRLqHtIEIFBPM1jsqFUxjGAJPBPV&hd=false'
