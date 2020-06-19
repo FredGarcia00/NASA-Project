@@ -1,5 +1,4 @@
 
-
 *{
     padding: 0;
     margin: 0;
@@ -25,7 +24,7 @@ body{
 
 }
 /* The logo and title here */
-header{
+header {
     /* background: url(/img/sky-space-dark-galaxy-2162.jpg); */
     background: linear-gradient(black,blue);
     background-size: cover;
@@ -35,9 +34,7 @@ header{
     display: flex;
     justify-content: start;
     align-items: center;
- 
 }
-
 /* End of logo and title */
 
 /* Below is the banner info */
@@ -59,7 +56,7 @@ header{
 
 /* Below is bottom half of pages */
 
-.top-container{
+.top-container {
     display: grid;
     grid-template-columns: repeat(2,2fr);
     grid-auto-rows: minmax(100px,auto);

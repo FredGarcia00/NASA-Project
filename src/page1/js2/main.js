@@ -21,22 +21,42 @@ const getPicture = () => {
 
 
 const showOutput = res => {
-    if(res.data.media_type == "video") {
+    if(res.data.media_type == "video" && res.data.copyright) {
         let btn = document.getElementById('pod');
         btn.remove();
         spinner.clearSpinner();
         document.getElementById('p').innerHTML = `
         <h2> ${res.data.title} </h2>
-        <iframe width="425" height="315"
+        <iframe class="video"
         src= "${res.data.url}">
         </iframe>
         <p>${res.data.date}</p>
-        <p class="credit">Image by  ${res.data.copyright}</p>
-        `;
+        <p class="credit">Credit: ${res.data.copyright}</p>
+        `
         document.getElementById('p2').innerHTML= `
         <h2> About this picture </h2>
         <p>${res.data.explanation}</p>
         `;
+    }
+    else if(res.data.copyright == null) {
+        let btn = document.getElementById('pod');
+        btn.remove();
+        spinner.clearSpinner();
+        document.getElementById('p').innerHTML = `
+        <h2> ${res.data.title} </h2>
+        <iframe class="video"
+        src= "${res.data.url}">
+        </iframe>
+        <p>Date uploaded: ${res.data.date}</p>
+        <p>Credit: NASA</p>
+        `
+        document.getElementById('p2').innerHTML= `
+        <h2> About this picture </h2>
+        <p>${res.data.explanation}</p>
+        `;
+        document.getElementById('credit').innerHTML= `
+        <p>&copy Design by Fred Garcia 2020</p>
+        `
     }
     else {
         let btn = document.getElementById('pod');
@@ -45,13 +65,16 @@ const showOutput = res => {
         document.getElementById('p').innerHTML= `
         <h2>${res.data.title}</h2>
         <a href = "${res.data.url}" target = "_blank"> <img src="${res.data.url}"> </a>
-        <p>Uploaded: ${res.data.date}</p>
-        <p class="credit">Image by ${res.data.copyright}</p>
         `;
         document.getElementById('p2').innerHTML= `
         <h2>About this picture</h2>
         <p>${res.data.explanation}</p>
         `;
+        document.querySelector('.info-display').innerHTML = `
+        <p>Uploaded: ${res.data.date}</p>
+        <p class="credit">Image by ${res.data.copyright}</p>
+        `;
+       
         document.getElementById('credit').innerHTML= `
         <p>&copy Design by Fred Garcia 2020</p>
         `;
