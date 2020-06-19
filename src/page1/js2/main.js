@@ -30,12 +30,17 @@ const showOutput = res => {
         <iframe class="video"
         src= "${res.data.url}">
         </iframe>
-        <p>${res.data.date}</p>
-        <p class="credit">Credit: ${res.data.copyright}</p>
-        `
+        `;
         document.getElementById('p2').innerHTML= `
         <h2> About this picture </h2>
         <p>${res.data.explanation}</p>
+        `;
+        document.querySelector('.info-display').innerHTML = `
+        <p>Uploaded: ${res.data.date}</p>
+        <p class="credit">Credit: ${res.data.copyright}</p>
+        `;
+        document.getElementById('credit').innerHTML= `
+        <p>&copy Design by Fred Garcia 2020</p>
         `;
     }
     else if(res.data.copyright == null) {
@@ -47,16 +52,18 @@ const showOutput = res => {
         <iframe class="video"
         src= "${res.data.url}">
         </iframe>
-        <p>Date uploaded: ${res.data.date}</p>
+        `;
+        document.querySelector('.info-display').innerHTML = `
+        <p>Uploaded: ${res.data.date}</p>
         <p>Credit: NASA</p>
-        `
+        `;
         document.getElementById('p2').innerHTML= `
         <h2> About this picture </h2>
         <p>${res.data.explanation}</p>
         `;
         document.getElementById('credit').innerHTML= `
         <p>&copy Design by Fred Garcia 2020</p>
-        `
+        `;
     }
     else {
         let btn = document.getElementById('pod');
@@ -72,7 +79,7 @@ const showOutput = res => {
         `;
         document.querySelector('.info-display').innerHTML = `
         <p>Uploaded: ${res.data.date}</p>
-        <p class="credit">Image by ${res.data.copyright}</p>
+        <p class="credit">Credit: ${res.data.copyright}</p>
         `;
        
         document.getElementById('credit').innerHTML= `
