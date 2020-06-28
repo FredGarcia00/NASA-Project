@@ -21,7 +21,7 @@ const getPicture = () => {
 
 
 const showOutput = res => {
-    console.log(res);
+    // console.log(res);
    
     if(res.data.media_type == "video" && res.data.copyright) {
         let btn = document.getElementById('pod');
