@@ -21,6 +21,8 @@ const getPicture = () => {
 
 
 const showOutput = res => {
+    console.log(res);
+   
     if(res.data.media_type == "video" && res.data.copyright) {
         let btn = document.getElementById('pod');
         btn.remove();
@@ -43,7 +45,7 @@ const showOutput = res => {
         <p>&copy Design by Fred Garcia 2020</p>
         `;
     }
-    else if(res.data.copyright == null) {
+    else if ( res.data.media_type == "video" && res.data.copyright == null ) {
         let btn = document.getElementById('pod');
         btn.remove();
         spinner.clearSpinner();
@@ -65,7 +67,7 @@ const showOutput = res => {
         <p>&copy Design by Fred Garcia 2020</p>
         `;
     }
-    else {
+    if (res.data.media_type == "image") {
         let btn = document.getElementById('pod');
         btn.remove();
         spinner.clearSpinner();
@@ -74,8 +76,8 @@ const showOutput = res => {
         <a href = "${res.data.url}" target = "_blank"> <img src="${res.data.url}"> </a>
         `;
         document.getElementById('p2').innerHTML= `
-        <h2>About this picture</h2>
-        <p>${res.data.explanation}</p>
+        <h2> About this picture </h2>
+        <p> ${res.data.explanation} </p>
         `;
         document.querySelector('.info-display').innerHTML = `
         <p>Uploaded: ${res.data.date}</p>
