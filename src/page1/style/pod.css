@@ -168,9 +168,7 @@ header a {
   flex-direction: column;
   height: 90%;
   width: 100%;
-  /* position: absolute; */
-  /* z-index: -1; */
-  transform: scale(1);
+  
 }
 
 

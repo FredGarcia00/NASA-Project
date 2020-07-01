@@ -19,12 +19,14 @@ import * as spinner from '../../page2/spinner';
         url:'https://api.nasa.gov/planetary/apod?api_key=6YmFdsVxaR5ewRLqHtIEIFBPM1jsqFUxjGAJPBPV&hd=false'
     })
     .then(res => {
-        if(res.data.media_type == "video" && res.data.copyright) {  
+        console.log(res);
+        if (res.data.media_type == "video" && res.data.copyright) {  
+            
             spinner.clearSpinner();
             document.getElementById('p').innerHTML = `
             <h2> ${res.data.title} </h2>
             <iframe class="video"
-            src= "${res.data.url}">
+            src="${res.data.url}">
             </iframe>
             `;
             document.getElementById('p2').innerHTML= `
@@ -44,7 +46,7 @@ import * as spinner from '../../page2/spinner';
             document.getElementById('p').innerHTML = `
             <h2> ${res.data.title} </h2>
             <iframe class="video"
-            src= "${res.data.url}">
+            src="${res.data.url}">
             </iframe>
             `;
             document.querySelector('.info-display').innerHTML = `
@@ -78,7 +80,7 @@ import * as spinner from '../../page2/spinner';
             <p>&copy Design by Fred Garcia 2020</p>
             `;
         }
-        else {
+        else if (res.data.media_type == "image" && !res.data.copyright) {
             spinner.clearSpinner();
             document.getElementById('p').innerHTML= `
             <h2>${res.data.title}</h2>
