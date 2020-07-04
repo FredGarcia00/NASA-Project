@@ -146,7 +146,7 @@ header a {
     position: relative;
     display: grid;
     grid-gap: 10px; 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 2fr);
     
   }
   .info-display {
@@ -160,6 +160,8 @@ header a {
   opacity: .7;
   /* font-size: 1.5rem; */
   grid-row: 1/2;
+  padding: 40px;
+  height: 100%;
   
 }
 
@@ -195,7 +197,7 @@ header a {
     display: block;
     margin-left: auto;
     margin-right: auto; 
-    height:auto;
+    /* height: 90%; */
     max-width: 100%;
     background-size: cover;
     background-position: center; 
@@ -240,6 +242,13 @@ header a {
   margin-top: 100px;
 }
 
+.credit {
+  font-size: 1.5rem;
+  
+}
+
+
+
 @media only screen and (min-width: 768px) and (max-width:1020px) {
     .main-body {
       width:100%;
@@ -258,4 +267,6 @@ header a {
     height: 100%;
     width: 100%;
   }
+  
+
 }

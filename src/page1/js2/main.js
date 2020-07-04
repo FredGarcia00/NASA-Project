@@ -19,9 +19,8 @@ import * as spinner from '../../page2/spinner';
         url:'https://api.nasa.gov/planetary/apod?api_key=6YmFdsVxaR5ewRLqHtIEIFBPM1jsqFUxjGAJPBPV&hd=false'
     })
     .then(res => {
-        console.log(res);
+        // console.log(res);
         if (res.data.media_type == "video" && res.data.copyright) {  
-            
             spinner.clearSpinner();
             document.getElementById('p').innerHTML = `
             <h2> ${res.data.title} </h2>
@@ -34,14 +33,14 @@ import * as spinner from '../../page2/spinner';
             <p>${res.data.explanation}</p>
             `;
             document.querySelector('.info-display').innerHTML = `
-            <p>Uploaded: ${res.data.date}</p>
+            <p class="credit">Uploaded: ${res.data.date}</p>
             <p class="credit">Credit: ${res.data.copyright}</p>
             `;
             document.getElementById('credit').innerHTML= `
             <p>&copy Design by Fred Garcia 2020</p>
             `;
         }
-        else if ( res.data.media_type == "video" && !res.data.copyright ) {
+         if ( res.data.media_type == "video" && !res.data.copyright ) {
             spinner.clearSpinner();
             document.getElementById('p').innerHTML = `
             <h2> ${res.data.title} </h2>
@@ -72,7 +71,7 @@ import * as spinner from '../../page2/spinner';
             <p> ${res.data.explanation} </p>
             `;
             document.querySelector('.info-display').innerHTML = `
-            <p>Uploaded: ${res.data.date}</p>
+            <p class="credit">Uploaded: ${res.data.date}</p>
             <p class="credit">Credit: ${res.data.copyright}</p>
             `;
            
@@ -80,7 +79,7 @@ import * as spinner from '../../page2/spinner';
             <p>&copy Design by Fred Garcia 2020</p>
             `;
         }
-        else if (res.data.media_type == "image" && !res.data.copyright) {
+         if (res.data.media_type == "image" && !res.data.copyright) {
             spinner.clearSpinner();
             document.getElementById('p').innerHTML= `
             <h2>${res.data.title}</h2>
@@ -91,7 +90,7 @@ import * as spinner from '../../page2/spinner';
             <p> ${res.data.explanation} </p>
             `;
             document.querySelector('.info-display').innerHTML = `
-            <p>Uploaded: ${res.data.date}</p>
+            <p class="credit">Uploaded: ${res.data.date}</p>
             <p class="credit">Credit: NASA</p>
             `;
            
