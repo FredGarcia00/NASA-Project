@@ -53,12 +53,9 @@ axios({
             <p>Launched from Earth on: ${res.data.photos[0].rover.launch_date}</p>
             <p>Landed on Mars: ${res.data.photos[0].rover.landing_date}</p>
             <p>Status: <span class="status-green">${res.data.photos[0].rover.status}</span></p>
-            <p>Max sol: ${res.data.photos[0].rover.max_sol}</p>
-            <p>Last received photos on: ${res.data.photos[0].rover.max_date}</p>
-            <p>Total photos: ${res.data.photos[0].rover.total_photos}</p>
             `;
         }
-        // console.log(res);
+        console.log(res);
     })
     .catch(error => console.error(error));
 
