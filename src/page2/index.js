@@ -55,7 +55,7 @@ axios({
             <p>Status: <span class="status-green">${res.data.photos[0].rover.status}</span></p>
             `;
         }
-        console.log(res);
+        // console.log(res);
     })
     .catch(error => console.error(error));
 

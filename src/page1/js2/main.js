@@ -3,7 +3,7 @@ import css from '../style/pod.css';
 import * as spinner from '../../page2/spinner';
 
 
-        // axios.get('https://api.nasa.gov/planetary/apod?api_key=6YmFdsVxaR5ewRLqHtIEIFBPM1jsqFUxjGAJPBPV&hd=false')
+        // axios.get('https://api.nasa.gov/planetary/apod?api_key=uVVuFDbFzE6TMRaSx2itptlDHMEMPjKFIG719Y8g')
         // .then(res => console.log(res));
 
 //Get request
@@ -16,10 +16,10 @@ import * as spinner from '../../page2/spinner';
    spinner.spinner();
     axios({
         method:'get',
-        url:'https://api.nasa.gov/planetary/apod?api_key=6YmFdsVxaR5ewRLqHtIEIFBPM1jsqFUxjGAJPBPV&hd=false'
+        url:'https://api.nasa.gov/planetary/apod?api_key=uVVuFDbFzE6TMRaSx2itptlDHMEMPjKFIG719Y8g'
     })
     .then(res => {
-        // console.log(res);
+        console.log(res);
         if (res.data.media_type == "video" && res.data.copyright) {  
             spinner.clearSpinner();
             document.getElementById('p').innerHTML = `
